@@ -1,0 +1,13 @@
+body {
+  background-color: #ccc;
+  margin: 0 auto; }
+
+header {
+  background-color: #eee;
+  padding-bottom: 50; }
+  header .logo {
+    float: left; }
+  header .menu {
+    float: right; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,14 @@
+body{
+    background-color:#ccc;
+    margin:0 auto;
+}
+header{
+    background-color:#eee;
+    padding-bottom:50;
+    .logo{
+       float:left;
+    }
+    .menu{
+        float:right;
+    }
+}

@@ -1,24 +1,29 @@
 var gulp = require('gulp'),
-    uglify = require('gulp-uglify');
-var sass = require('gulp-sass');
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    sass = require('gulp-sass');
 
 //Scripts Task
-//Uglifies
+
 gulp.task('scripts',function() {
-    gulp.src ('source/js/*.js')
+    gulp.src (['node_modules/jquery/dist/jquery.min.js','source/js/*.js'])
+    .pipe(concat('main.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('dist/scripts'));
 });
 
 //Sass Task
 gulp.task('sass', function () {
-  return gulp.src('source/scss/*.scss')
+  return gulp.src([])
     .pipe(sass.sync().on('error', sass.logError))
-    .pipe(gulp.dest('dist/styles'));
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('dist/scripts'));
 });
+
 gulp.task('sass:watch', function () {
-  gulp.watch('source/scss/*.scss', ['sass']);
+  gulp.watch('source/scss/main.scss', ['sass']);
 });
+
 
 //Styles Task
 
